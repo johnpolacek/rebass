@@ -12,7 +12,7 @@ import {
 import theme from './theme'
 
 const Base = styled.div([], props => ({
-  fontFamily: props.theme.font || theme.font
+  fontFamily: props.theme.fonts.sans || theme.fonts
 }))
 
 const Provider = props => (
@@ -31,8 +31,11 @@ Provider.propTypes = {
       object,
       array
     ]),
-    font: string,
-    monospace: string,
+    fonts: shape({
+      sans: string,
+      serif: string,
+      mono: string
+    }),
     radius: number
   })
 }

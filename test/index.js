@@ -50,8 +50,10 @@ test('theme is an object', t => {
   t.true(Array.isArray(theme.weights))
   t.is(typeof theme.colors, 'object')
   t.is(typeof theme.radius, 'number')
-  t.is(typeof theme.font, 'string')
-  t.is(typeof theme.monospace, 'string')
+  t.is(typeof theme.fonts, 'object')
+  t.is(typeof theme.fonts.sans, 'string')
+  t.is(typeof theme.fonts.serif, 'string')
+  t.is(typeof theme.fonts.mono, 'string')
 })
 
 test('createComponent returns null with no config', t => {

@@ -3,10 +3,12 @@ import {
   bool,
   string,
   number,
+  object,
   oneOf,
 } from 'prop-types'
 import {
   space,
+  fonts,
   fontSizes,
   weights,
   colors,
@@ -178,7 +180,8 @@ const components = [
     },
     style: props => Object.assign({
       textAlign: align(props),
-      fontWeight: props.bold ? bold(props) : idx('weights.0', props.theme)
+      fontWeight: props.bold ? bold(props) : idx('weights.0', props.theme),
+      fontFamily: props.font || 'inherit'
     }, caps(props)),
     propTypes: {
       left: bool,
@@ -186,7 +189,8 @@ const components = [
       right: bool,
       justify: bool,
       bold: bool,
-      caps: bool
+      caps: bool,
+      font: string
     }
   },
   {
@@ -249,7 +253,7 @@ const components = [
       m: 0,
     },
     style: props => ({
-      fontFamily: props.theme.monospace,
+      fontFamily: fonts.mono,
       overflow: 'auto'
     })
   },
@@ -260,7 +264,7 @@ const components = [
       f: 1,
     },
     style: props => ({
-      fontFamily: props.theme.monospace
+      fontFamily: fonts.mono
     })
   },
   {

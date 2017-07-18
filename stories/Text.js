@@ -22,3 +22,10 @@ storiesOf('Text', module)
       children='Hello'
     />
   ))
+  .add('Serif', () => (
+    <Text
+      is='div'
+      font='serif'
+      children='Hello'
+    />
+  ))

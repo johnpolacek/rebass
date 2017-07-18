@@ -216,7 +216,7 @@ This is useful for ensuring semantic markup, while keeping styles decoupled.
 
 The `<Provider />` component is a wrapper around styled-components' [ThemeProvider](https://www.styled-components.com/docs/advanced#theming).
 It also provides global styles that remove the body tag's margin, sets all elements to `box-sizing: border-box`,
-and sets a default font-family value based on `theme.font`.
+and sets a default font-family value based on `theme.fonts.sans`.
 
 The Provider should be wrapped around a top-level component to ensure Rebass works as expected.
 
@@ -252,6 +252,7 @@ accepts several typographic style props.
 - `justify` (boolean) text-align: justify
 - `bold` (boolean) font-weight: theme.weights[1]
 - `caps` (boolean) text-transform: uppercase; letter-spacing: .2em
+- `font` (string) font-family: props.font
 
 ### `<Border />`
 
@@ -322,13 +323,16 @@ const theme = {
   weights: [
     400, 600
   ],
+  fonts: {
+  	'sans':'Arial, Helvetica, sans-serif',
+  	'serif':'Georgia, serif',
+  	'mono': '"Roboto Mono", Menlo, monospace'
+  },
   colors: {
     black: '#111',
     white: '#fff',
     blue: '#07c'
   },
-  font: 'Georgia, serif',
-  monospace: '"Roboto Mono", Menlo, monospace',
   radius: 2
 }
 
